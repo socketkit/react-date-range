@@ -11,22 +11,22 @@ module.exports = {
       links: [
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400',
+          href: 'https://fonts.googleapis.com/css?family=Open+Sans:300,400'
         },
         {
           rel: 'stylesheet',
-          href: './dist/styles.css',
+          href: './dist/styles.css'
         },
         {
           rel: 'stylesheet',
-          href: './dist/theme/default.css',
+          href: './dist/theme/default.css'
         },
         {
           rel: 'stylesheet',
-          href: './demo/styles.css',
-        },
-      ],
-    },
+          href: './demo/styles.css'
+        }
+      ]
+    }
   },
   theme: {
     baseBackground: '#fdfdfc',
@@ -35,8 +35,8 @@ module.exports = {
     border: '#e0d2de',
     font: ['Open Sans'],
     fontFamily: {
-      base: '"Open Sans", "Helvetica", sans-serif',
-    },
+      base: '"Open Sans", "Helvetica", sans-serif'
+    }
   },
 
   getComponentPathLine(componentPath) {
@@ -52,27 +52,27 @@ module.exports = {
           paddingLeft: 0,
           paddingRight: 0,
           borderWidth: [[0, 0, 1, 0]],
-          borderRadius: 0,
-        },
+          borderRadius: 0
+        }
       },
       Code: {
         code: {
           // make inline code example appear the same color as links
           color: theme.color.link,
-          fontSize: 14,
-        },
-      },
+          fontSize: 14
+        }
+      }
     };
   },
   // Override Styleguidist components
   styleguideComponents: {
     LogoRenderer: path.join(__dirname, 'demo/components/Logo'),
     StyleGuideRenderer: path.join(__dirname, 'demo/components/StyleGuide'),
-    SectionsRenderer: path.join(__dirname, 'demo/components/SectionsRenderer'),
+    SectionsRenderer: path.join(__dirname, 'demo/components/SectionsRenderer')
   },
   moduleAliases: {
     'react-date-range/dist': path.resolve(__dirname, moduleSource),
-    'react-date-range': path.resolve(__dirname, moduleSource),
+    'react-date-range': path.resolve(__dirname, moduleSource)
   },
   webpackConfig: {
     module: {
@@ -80,45 +80,45 @@ module.exports = {
         {
           test: /\.jsx?$/,
           exclude: /node_modules/,
-          loader: 'babel-loader',
+          use: ['babel-loader']
         },
         {
           test: /\.css$/,
-          loader: 'style-loader!css-loader?modules',
+          use: ['style-loader!css-loader?modules']
         },
         {
           test: /\.svg$/,
-          loader: 'url-loader',
-        },
-      ],
-    },
+          use: ['url-loader']
+        }
+      ]
+    }
   },
   pagePerSection: false,
   sections: [
     {
       name: 'Getting Started',
       content: 'demo/README.md',
-      sectionDepth: 0,
+      sectionDepth: 0
     },
     {
       name: 'Components',
       sections: [
         {
           components: () => ['src/components/DateRangePicker/index.js'],
-          usageMode: 'hide',
+          usageMode: 'hide'
         },
         {
           components: () => ['src/components/DateRange/index.js'],
-          usageMode: 'hide',
+          usageMode: 'hide'
         },
         {
-          components: () => ['src/components/Calendar/index.js'],
+          components: () => ['src/components/Calendar/index.js']
         },
         {
-          components: () => ['src/components/DefinedRange/index.js'],
-        },
+          components: () => ['src/components/DefinedRange/index.js']
+        }
       ],
-      sectionDepth: 0,
-    },
-  ],
+      sectionDepth: 0
+    }
+  ]
 };
