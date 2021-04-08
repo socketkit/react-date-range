@@ -19,12 +19,6 @@
     "datepicker",
     "rangepicker"
   ],
-  "contributors": [
-    "Burak Can <neoberg@gmail.com> (https://github.com/burakcan)",
-    "Mehmet Kamil Morcay <mehmetmorcay@gmail.com> (https://github.com/mkg0)",
-    "Engin Semih Basmacı <semih.basmaci@gmail.com> (https://github.com/mortargrind)",
-    "Onur Kerimov <onurkerimov@gmail.com> (https://github.com/onurkerimov)"
-  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -81,5 +75,49 @@
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.30.0"
+  },
+  "prettier": {
+    "printWidth": 110,
+    "tabWidth": 2,
+    "useTabs": false,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "bracketSpacing": true,
+    "jsxBracketSameLine": false,
+    "fluid": false
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "prettier"
+    ],
+    "plugins": [
+      "react",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "singleQuote": true,
+          "trailingComma": "es5",
+          "bracketSpacing": true,
+          "jsxBracketSameLine": true,
+          "printWidth": 100,
+          "parser": "babylon"
+        }
+      ],
+      "no-debugger": 0,
+      "no-console": 0
+    },
+    "parser": "babel-eslint",
+    "env": {
+      "es6": true,
+      "node": true,
+      "browser": true,
+      "jest": true
+    }
   }
 }
